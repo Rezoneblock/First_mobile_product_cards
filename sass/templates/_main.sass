@@ -1,0 +1,163 @@
+.main
+  &__list
+    list-style: none
+    padding: 26px 0
+    &__item
+      position: relative
+      display: flex
+      flex-direction: column
+      border: 1px solid rgba(#828282, 0.3)
+      border-radius: 24px
+      overflow: hidden
+      &:nth-child(n + 3)
+        display: none
+      &:not(:last-of-type)
+        margin-bottom: 30px
+      &::before
+        position: absolute
+        @include font(12px, 20px, $dark)
+        font-family: 'OpenSans-Semibold', sans-serif
+        font-weight: 600
+        text-align: center
+        text-transform: uppercase
+      &--new
+        &::before
+          content: 'новинка'
+
+      &--year
+        &::before
+          content: 'круглый год'
+
+      &--purple
+        &::before
+          background-color: #7553FF
+          color: $light
+
+      &--yellow
+        &::before
+          background-color: $primary
+
+      &--cyan
+        &::before
+          background-color: #099CE8
+          color: $light
+
+      &--rounded
+        &::before
+          top: 0
+          padding: 12px 30px
+          border-radius: 15px 0 12px 0
+          letter-spacing: 1px
+
+      &--rectangle
+        &::before
+          top: 40px
+          padding: 7px 18px
+  &__details
+    padding: 15px 10px
+    list-style: none
+    &__item
+      display: flex
+      align-items: center
+    &__icon
+      width: 16px
+      height: 16px
+    &__departure
+      margin-left: 9px
+      @include font(12px, 20px, $gray)
+    &__title
+      max-width: 330px
+      margin-top: 10px
+      margin-bottom: 20px
+      @include font(14px, 22px, $black)
+    &__description
+      display: flex
+      flex-direction: column
+      list-style: none
+      &__item
+        display: flex
+        &--column
+          flex-direction: column !important
+          align-items: flex-start !important
+        &:not(:last-of-type)
+          margin-bottom: 14px
+        &:last-of-type
+          flex-direction: column
+      &__text
+        margin-left: 20px
+        @include font(14px, 20px, $dark)
+      &__time-list
+        margin-top: 10px
+        display: flex
+        justify-content: center
+        width: 100%
+        padding: 0 10px
+        &--wrap
+          padding: 0 40px
+          flex-wrap: wrap
+          justify-content: center !important
+        &__more
+          cursor: pointer
+          background-color: $cyan
+          border-radius: 11px
+          padding: 2px 14px
+          @include font(14px, 20px, $dark)
+          transition: .4s
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+          &:hover
+            background-color: $blue
+            color: $light
+            box-shadow: 0px 2px 4px 0px #00000040
+        &__link
+          margin-left: 4px
+          margin-right: 4px
+          background-color: $cyan
+          border-radius: 11px
+          padding: 2px 14px
+          @include font(14px, 20px, $dark)
+          text-decoration: none
+          transition: .4s
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+          &--column
+            margin-top: 5px
+          &--hidden
+            display: none
+          &:hover
+            background-color: $blue
+            color: $light
+            box-shadow: 0px 2px 4px 0px #00000040
+    &__total
+      margin-top: 36px
+      padding: 0 10px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      width: 100%
+      max-width: 330px
+      &__cost
+        display: flex
+        flex-direction: column
+        &__price
+          @include font(30px, 20px, $black)
+          font-weight: 400
+          &__icon
+            width: 19px
+            height: 23px
+        &__details
+          display: flex
+          align-items: center
+          @include font(10px, 20px, $black)
+          &__icon
+            width: 8px
+            height: 8px
+            margin: 0 2px
+      &__button
+        padding: 12px 43px
+        border-radius: 20px
+        background-color: $primary
+        @include font(14px, 20px, $dark)
+        text-decoration: none
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        transition: .4s
+        &:hover
+          box-shadow: 0px 2px 4px 0px #00000040
